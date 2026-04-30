@@ -2,6 +2,8 @@
 
 **A screenless, voice-first companion device. Carved from mineral stone. Built for the person, not the feed.**
 
+![Ezra — Concept Render](ezra-concept-render.svg)
+
 ---
 
 ## What is Ezra?
@@ -40,6 +42,12 @@ Ezra is a palm-sized object, roughly the dimensions of a large river stone, mill
 
 ---
 
+## System Architecture
+
+![Ezra — System Architecture](system-architecture.svg)
+
+---
+
 ## Project Status
 
 | Phase | Status |
@@ -58,26 +66,26 @@ Ezra is a palm-sized object, roughly the dimensions of a large river stone, mill
 ## Repository Structure
 
 ```
-ezra/
+files/
 ├── README.md                    ← This file
 ├── SPEC.md                      ← Full hardware & software specification
-├── docs/
-│   ├── philosophy.md            ← Product philosophy and positioning
-│   ├── prototype-guide.md       ← How to build the investor prototype
-│   ├── ppg-authentication.md    ← PPG identity implementation notes
-│   └── fido2-integration.md     ← Passkey / FIDO2 architecture
-├── specs/
-│   ├── hardware.md              ← Component specifications
-│   ├── firmware.md              ← Software stack overview
-│   └── haptic-language.md      ← Haptic pattern vocabulary
-└── assets/
-    ├── renders/                 ← Product visualization images
-    └── diagrams/                ← Architecture and interaction diagrams
+├── CONTRIBUTING.md              ← Contribution guidelines
+├── REPO_SETUP.md                ← Repository setup notes
+├── philosophy.md                ← Product philosophy and positioning
+├── prototype-guide.md           ← How to build the investor prototype
+├── ppg-authentication.md        ← PPG identity implementation notes
+├── hardware.md                  ← Component specifications
+├── firmware.md                  ← Software stack overview
+├── haptic-language.md           ← Haptic pattern vocabulary
+├── ezra-concept-render.svg      ← Product visualization
+└── system-architecture.svg      ← Architecture diagram
 ```
 
 ---
 
-## Contact
+## Built at The Studio
+
+![The Studio by Good Industries](studio.png)
 
 Good Industries · A division of The Good Project  
 [thegoodproject.net](https://thegoodproject.net)
