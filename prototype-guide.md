@@ -11,7 +11,7 @@ The investor prototype is not proof of manufacturing. It is proof of experience.
 **Goal:** An object investors can hold. Weight, texture, and material are the first sensory argument.
 
 **Parts needed:**
-- 1× KRION or Corian billet, approximately 130×75×35mm
+- 1× KRION or Corian billet, approximately 120×75×20mm
 - Access to a CNC shop (local fabricators, Xometry, Protolabs)
 - Sandpaper: 220, 400, 800, 1200 grit
 - Matte clear coat (optional)
@@ -21,10 +21,14 @@ The investor prototype is not proof of manufacturing. It is proof of experience.
 1. Source KRION from a Porcelanosa distributor or Corian from a kitchen countertop fabricator. Small off-cut pieces are often available cheaply or free.
 
 2. Provide the CNC shop with a basic 3D model (STEP file) defining:
-   - The exterior river-stone profile (rounded corners, bilateral grip indent on each long face)
-   - A hollow interior cavity (wall thickness ~6mm)
+   - The exterior golden-ratio river-stone profile, 108mm long, 66mm fuller tail, 63mm narrower head, 21mm crowned center thickness, 8mm edge thickness
+   - Softened phone edges: large continuous radii, no flat exterior planes, and a crown high point shifted roughly 5mm rearward toward the palm side
+   - A hollow interior cavity (wall thickness ~3–4mm, with thicker optical/thermal bosses where needed)
    - The 12mm circular sensor window recess on the lower face
-   - A flat bottom face for the Peltier contact zone
+   - A hidden centered rear Qi2/MagSafe-style coil and magnet envelope, not visible exterior ring geometry
+   - A lower rear thermal contact zone
+   - Thinned Corian/KRION or hidden light-pipe zones for a diffuse internal amber glow
+   - Subtle tactile asymmetry: narrower head, fuller tail, flatter thumb sweep, rounder finger side, and a biased underside contact patch
 
 3. After CNC milling, hand-sand exterior surfaces through grits to 1200. The finish should feel like a polished stone — not glossy, not rough. Matte is correct.
 
@@ -114,7 +118,7 @@ Demo script: "Feel this — this is a standard notification. Now feel this — t
 ## Layer 4 — Warmth Demonstration (Optional but High-Impact)
 
 **Parts:**
-- 1× Peltier TEC1-12706
+- 1× Peltier TEC1-12706 for benchtop demo, or thinner thermoelectric patch if available
 - 1× copper heat spreader plate
 - 1× Pi Zero 2W PWM GPIO → MOSFET → TEC
 - 1× 5V 4A power supply (demo rig only)
@@ -146,9 +150,25 @@ This is the most memorable 10 seconds in the demo. It activates a sensory channe
 
 ---
 
+## Product Scene Storyboards
+
+Use these as Onshape presentation scenes, render prompts, or investor demo beats:
+
+| Scene | Product Behavior |
+|-------|------------------|
+| Morning Guidance | User picks up Ezra from bedside. Soft glow. Ezra says recovery looks low and suggests a lighter day. |
+| Pre-Meeting Calm | Device senses elevated pulse while held and suggests breathing cadence through slow haptics. |
+| Evening Wind Down | Warm amber light, reduced stimulation, and a sleep-window recommendation after repeated poor sleep signals. |
+| Walk Prompt | Subtle midday pulse after sedentary pattern detection; no screen, no shame loop. |
+| Emotional Recovery | After an elevated stress episode, Ezra gives quiet guidance while the device remains warm and calm in the hand. |
+
+These are non-diagnostic scenes. The claim is passive pattern intelligence and personal regulation, not medical assessment.
+
+---
+
 ## What This Prototype Does Not Demonstrate
 
-- Full PPG authentication (this requires the sapphire window, MAX30102, and security element integration — target for prototype v2)
+- Full PPG authentication and passive regulation sensing (this requires the sapphire window, MAX30102, security element, and longitudinal trend modeling — target for prototype v2)
 - Cellular calling (tethered to phone; present as "demo mode")
 - Production audio quality (directional microphone array)
 - Battery life

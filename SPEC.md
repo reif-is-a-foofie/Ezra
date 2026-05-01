@@ -1,6 +1,6 @@
 # Ezra — Full Product Specification
 
-**Version:** 0.3 (Pre-prototype)  
+**Version:** 0.4 (Pre-prototype)  
 **Status:** Specification phase  
 **Owner:** Good Industries / The Good Project
 
@@ -12,13 +12,31 @@
 
 | Parameter | Target |
 |-----------|--------|
-| Length | 110–120 mm |
-| Width | 55–65 mm |
-| Depth | 18–22 mm |
-| Weight | 180–220g (intentionally substantial) |
-| Form | Rounded river-stone profile, bilateral grip geometry |
+| Length | 116 mm |
+| Width | 64 mm palm datum, with subtly narrower leading/head end |
+| Depth | 15 mm crowned center / 5.5 mm visual edge |
+| Top shell wall | TBD after shell split; target 3.0-3.5 mm |
+| Bottom shell wall | 2.5 mm at light-diffusion zones / 3.5 mm perimeter target |
+| Weight | 165g prototype target |
+| Form | Flattened nautilus / skip-stone profile with hidden tactile asymmetry |
 
-The weight is a deliberate design decision. A device that feels dense and present does not feel disposable. The heft signals quality and longevity. Mass also functions as a thermal battery for the Peltier element.
+The governing palm datum is the 64mm short axis. The current skip-stone body is 116mm long, giving A/B = 1.8125. This is intentionally longer than pure φ because the device needs pocket reach, bottom flood-light real estate, and a more athletic skipping-stone read. The form remains φ-influenced through crown placement, foot geometry, haptic placement, seam behavior, and construction logic.
+
+The industrial design target is a translucent warm-white mineral skip stone: longer and thinner than expected, shallow crowned top face, aggressively tapered edges, and no visible screen, camera, buttons, screws, or top markings. The object should feel like a flattened nautilus shell worn into a river stone, not a phone slab or hockey puck.
+
+Ezra uses tactile asymmetry hidden inside visual symmetry. The leading/head end is slightly narrower and faster. The trailing/tail end is calmer and slightly fuller. The right-hand thumb side has a subtle concavity/shelf, while the opposite side remains a smooth finger sweep. The crown peak is φ-derived at 71.7mm from the trailing end, 13.7mm ahead of true center.
+
+Sacred-geometry construction rules:
+- **φ:** 1.6180339887.
+- **Palm datum:** B = 64mm.
+- **Long axis:** A = 116mm.
+- **Superellipse:** Lamé curve, n = 2.5.
+- **Crown point:** A/φ = 71.7mm from trailing end.
+- **Feet:** golden gnomon triangle at (43, 0), (-20, -20), (-20, +20) mm.
+- **Foot triangle:** 40mm base, 66.1mm legs, apex angle 35.2°, visually approximating the 36°/72°/72° golden gnomon.
+- **Fibonacci spiral:** construction guide only. The top should feel derived from a flattened nautilus spiral, but the spiral must not be lit, engraved, printed, or visible as graphics.
+
+The weight is deliberate but no longer brick-like. The target is 165g: dense enough to feel premium and stable on its feet, light enough to pocket and handle as a personal object.
 
 ### 1.2 Material: KRION Mineral Solid Surface
 
@@ -31,6 +49,12 @@ KRION (manufactured by Porcelanosa Group) is a mineral composite of approximatel
 - **Available in matte white and mineral tones:** Consistent with the product's aesthetic language
 
 Alternative: Corian (DuPont / Trinseo) is functionally similar and more widely available through fabricators in the US market.
+
+### 1.2.1 Internal Glow
+
+Ezra may use a low-output internal amber glow through thinned KRION/Corian or a hidden perimeter light pipe. This is not a display surface and must not resolve into icons, pixels, notification badges, or text. The glow is limited to ambient state, warmth/social presence, charging feedback, and quiet location/state signaling. Translucency must be validated against actual material samples because standard mineral solid surface is mostly opaque at normal wall thickness.
+
+Visual target reference, May 2026: a warm translucent mineral pebble on a black surface, with a crystalline/alabaster Corian texture, softly glowing amber core, and a clean continuous amber perimeter seam. The edge glow should reflect subtly on the table. The top face remains visually pure: no Fibonacci line, no logo, no lens, no display, no obvious sensor, and no decorative mesh. The surface should read as natural crystalline mineral, like white onyx/alabaster/Corian, not plastic.
 
 ### 1.3 Sensor Window
 
@@ -66,11 +90,11 @@ The CM4 is chosen for prototype phase due to ecosystem maturity, available I/O, 
 | Component | Specification |
 |-----------|---------------|
 | Speaker | 2W full-range driver, tuned for 200Hz–8kHz voice intelligibility |
-| Microphone array | 3× MEMS microphones in triangular array (beamforming) |
+| Microphone array | 4× MEMS microphones on golden-rectangle perimeter grid (beamforming) |
 | DSP | Sensory TrulyHandsfree or equivalent wake-word / noise suppression |
 | Wake word | "Ezra" (custom model) |
 
-### 2.4 Identity — PPG Authentication
+### 2.4 Identity — PPG Authentication and Relationship Sensing
 
 | Component | Specification |
 |-----------|---------------|
@@ -83,6 +107,19 @@ The CM4 is chosen for prototype phase due to ecosystem maturity, available I/O, 
 **Mechanism:** The MAX30102 emits red (660nm) and infrared (880nm) light through the sapphire window into the user's palm. Reflected light is captured by the photodiode array. The resulting photoplethysmography (PPG) waveform encodes cardiovascular features (peak morphology, inter-beat interval, diastolic/systolic ratio) that are unique to the individual. An enrolled template is stored in the security element. Authentication occurs passively on pickup — no deliberate gesture required.
 
 **Security note:** PPG authentication is a physiological biometric. It cannot be replicated by a photograph or a recording. If a different person picks up the device, the waveform does not match, the session closes, and the device presents as inert.
+
+PPG is not only a lock. Every pickup is also a passive wellness signal captured without asking the user to wear a watch, open an app, or perform a health ritual. Ezra uses ordinary handling as a low-friction sampling moment.
+
+PPG-derived pattern intelligence may include heart rate, HRV, recovery state, stress load trends, sympathetic arousal, indirect sleep-debt indicators, circulation quality / cold-hand state, respiratory rhythm trends, and baseline drift over weeks or months. These outputs are treated as behavioral intelligence and personal regulation cues, not medical diagnosis.
+
+Example guidance behaviors:
+- Morning pickup: "Your recovery looks low today. Consider a lighter workout."
+- Pre-meeting pickup: elevated pulse triggers two slow breath haptics.
+- Late night pickup: warm amber light and a wind-down suggestion.
+- Midday pickup: sedentary trend triggers a subtle walk prompt.
+- Post-conflict pickup: lingering elevation triggers emotional recovery guidance.
+
+The product distinction is deliberate: a phone can measure things; Ezra shepherds behavior without adding screen distraction.
 
 ### 2.5 FIDO2 / Passkey Integration
 
@@ -110,33 +147,58 @@ This means Ezra can authenticate the user silently to any FIDO2-compliant servic
 
 | Component | Specification |
 |-----------|---------------|
-| Element | Peltier TEC1-12706 (40×40mm, 6A) |
+| Element | Thin thermoelectric patch target; TEC1-12706 allowed for benchtop demo only |
 | Driver | Custom PWM driver (0–100% duty cycle) |
 | Heat sink | Copper spreader plate to chassis mass |
 | Range | Ambient +0°C to +8°C surface temperature delta |
 | Location | Lower third of device rear face |
 
-The Peltier element enables warmth as a communication channel. A designated contact can trigger a warmth notification — the device surface temperature rises 4–6°C above ambient, detectable within 1–2 seconds of holding the device. This is not a gimmick; it activates a different sensory modality than vibration or sound, allowing the device to communicate without intruding on conversation or environment.
+The thermoelectric element enables warmth as a communication channel. A designated contact can trigger a warmth notification — the device surface temperature rises 4–6°C above ambient, detectable within 1–2 seconds of holding the device. This is not a gimmick; it activates a different sensory modality than vibration or sound, allowing the device to communicate without intruding on conversation or environment.
 
 ### 2.8 Light System
 
 | Component | Specification |
 |-----------|---------------|
-| LED array | COB LED, 1,200 lm output |
-| Optic | TIR (total internal reflection) optic, 10° spot |
-| Range | 60-meter beam throw at 10° |
-| Diffuse mode | 120° flood via diffuser panel |
-| Ambient mode | Perimeter LED ring (RGB, 5mm) for notification color language |
-| Driver | Constant-current LED driver with PWM dimming |
+| Bottom light array | Three 92mm linear COB bands under 2.5mm Corian diffusion layer |
+| Left band | Wide flood, warm/cool white, broad work-surface illumination |
+| Center band | Focused flashlight/throw band with linear prismatic/TIR optic |
+| Right band | Wide flood, paired with left band for shadowless rectangular flood |
+| Output target | 1,500-2,000 lm peak burst; lower sustained/emergency modes |
+| UV-A inspection | Two shielded 365nm underside emitters with visible-cut filter target |
+| Ambient mode | 0.6mm perimeter seam RGBW light pipe for notification/color language |
+| Driver | Constant-current LED drivers with independent PWM per band |
+
+The bottom face is a functional light platform, not an afterthought. In normal hand use the top remains the calm mineral face. When inverted or placed on its three feet, the underside provides multiple light modes: wide flood, focused flashlight beam, combined work light, low candle/bedside mode, emergency locator, and UV-A inspection. The three feet raise the bottom surface for stability, scratch protection, and thermal airflow.
 
 ### 2.9 Power
 
 | Component | Specification |
 |-----------|---------------|
-| Battery | 3,500mAh LiPo |
-| Charging | USB-C PD, 18W |
+| Battery | Custom Li-ion pouch, 5,500–6,500mAh equivalent geometry target |
+| Charging | USB-C PD, 18W; Qi2/MagSafe-style magnetic wireless charging target |
+| Wireless charging envelope | Hidden centered rear coil and magnet ring, sized for common phone magnetic charger alignment |
 | Target runtime | 18–24 hours typical use |
 | Emergency mode | 72-hour mode (voice + minimal haptic only) |
+
+---
+
+### 2.10 Mechanical Packaging Map
+
+The screenless face is functional real estate. Primary zones:
+
+| Zone | Allocation | Notes |
+|------|------------|-------|
+| Center rear | Qi2/MagSafe-style receiver coil and magnet alignment ring | Hidden packaging constraint only; do not expose as exterior ring geometry |
+| Lower front/palm face | 12mm sapphire PPG eye | Optically isolated from internal glow and adhesive stack |
+| Lower rear | 40×40mm thermal presence envelope | Prototype may use external/benchtop TEC; production needs thin thermoelectric patch |
+| Upper face/edge | Speaker aperture or hidden acoustic mesh | Avoid direct conflict with charger/magnet ring |
+| Perimeter grid | 4× MEMS microphones | Golden-rectangle four-point spacing |
+| Perimeter groove | Diffuse amber light pipe / RGBW status glow | Low-resolution ambient signal only, not a display |
+| Bottom light platform | Wide flood band / focused flashlight band / wide flood band | Underside only; do not contaminate top face visual purity |
+| Bottom UV-A | Two 365nm inspection emitters | Shielded, filtered, and visually quiet when off |
+| Bottom feet | Three silicone-capped Corian feet in golden gnomon layout | (43,0), (-20,-20), (-20,+20) mm from bottom center |
+| Bottom short edge | USB-C | Sealed port or gasketed connector |
+| Outer perimeter | LTE/WiFi/Bluetooth antennas | Maintain clearance from magnet ring and metal heat spreader |
 
 ---
 
@@ -173,6 +235,7 @@ All memory is stored on-device first; cloud sync is encrypted and user-controlle
 | Calls | SIP over LTE; VOIP fallback |
 | Messages | SMS via modem; Signal protocol for encrypted contacts |
 | AI-mediated messaging | Voice → text → send; incoming text → TTS readback |
+| Passive regulation | PPG trend + context → voice, warmth, haptic, or light guidance |
 
 ### 3.4 Navigation
 
@@ -200,7 +263,7 @@ The device does not have a browser. It does not have an app store. The attack su
 
 ### 5.1 Shell Fabrication
 
-KRION / Corian blocks are available from architectural distributors (Porcelanosa, local Corian dealers). A 110×65×25mm billet provides adequate material for the chassis with wall stock. CNC milling to net shape, followed by hand-sanding to 1200 grit and matte finish. Interior dimensions must accommodate all components with vibration isolation foam between the LRA and the chassis wall.
+KRION / Corian blocks are available from architectural distributors (Porcelanosa, local Corian dealers). A 130×80×25mm billet provides adequate material for the 116×64mm crowned skip-stone shell with wall stock. CNC milling to net shape, followed by hand-sanding to satin mineral finish. Interior dimensions must accommodate all components with vibration isolation foam between the LRA and the chassis wall, plus a centered rear wireless charging coil and magnet ring hidden behind the exterior surface. The bottom shell must include three golden-gnomon feet, a shallow underside dish, and a thinned light-diffusion zone over the flood/flashlight/UV optics.
 
 ### 5.2 Assembly
 
@@ -216,7 +279,7 @@ Target certifications for commercial release: FCC Part 15 (USA), CE (EU), PTCRB 
 
 | Component | Source | Estimated Cost |
 |-----------|--------|----------------|
-| KRION billet (110×65×25mm) | Porcelanosa distributor | $40–80 |
+| KRION/Corian billet (125×80×30mm) | Porcelanosa distributor / Corian fabricator | $60–120 |
 | CNC milling (shell only) | Local CNC shop | $500–1,500 |
 | Raspberry Pi CM4 (4GB/32GB) | DigiKey / Mouser | $75 |
 | MAX30102 breakout | SparkFun / Adafruit | $25 |
@@ -228,7 +291,7 @@ Target certifications for commercial release: FCC Part 15 (USA), CE (EU), PTCRB 
 | Speaker (2W, 40mm) | Parts Express | $12 |
 | MEMS microphone array | DigiKey | $15 |
 | Quectel EC25 LTE module | Quectel direct | $45 |
-| LiPo battery (3,500mAh) | Adafruit | $20 |
+| Custom Li-ion pouch placeholder (6,000mAh class) | Battery supplier / prototype substitute | $40–80 |
 | USB-C PD charging board | Adafruit | $15 |
 | Misc (wiring, PCB, adhesive) | — | $100 |
 | **Total** | | **~$1,000–2,200** |

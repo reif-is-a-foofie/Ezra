@@ -2,7 +2,7 @@
 
 **A screenless, voice-first companion device. Carved from mineral stone. Built for the person, not the feed.**
 
-![Ezra — Concept Render](ezra-concept-render.svg)
+**3D shell:** [`ezra_nautilus/`](ezra_nautilus/) — Blender sources, brief, and exports (`ezra_nautilus.blend`).
 
 ---
 
@@ -77,7 +77,7 @@ files/
 ├── hardware.md                  ← Component specifications
 ├── firmware.md                  ← Software stack overview
 ├── haptic-language.md           ← Haptic pattern vocabulary
-├── ezra-concept-render.svg      ← Product visualization
+├── ezra_nautilus/               ← Nautilus shell (Blender / MCP addon / exports)
 └── system-architecture.svg      ← Architecture diagram
 ```
 

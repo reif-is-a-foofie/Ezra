@@ -30,7 +30,7 @@
 |-----------|------|--------------|-----------|-------|
 | Speaker | GF0401 (2W, 4Ω, 40mm) | Dayton Audio | Analog | Tuned for 200Hz–8kHz voice |
 | Amplifier | MAX98357A | Maxim | I2S | 3.2W Class D, filterless |
-| MEMS Mic (×3) | SPH0645LM4H | Knowles | I2S | Triangular array, 35mm spacing |
+| MEMS Mic (×4) | SPH0645LM4H | Knowles | I2S | Golden-rectangle perimeter array, phi-derived spacing |
 | DSP / Wake Word | TrulyHandsfree SDK | Sensory | SPI | Wake word "Ezra," always-on < 10mW |
 
 ### Biometric / Identity
@@ -40,6 +40,12 @@
 | PPG Sensor | MAX30102 | Maxim/Analog Devices | I2C | Red 660nm + IR 880nm |
 | Optical Window | Sapphire disc, 12mm × 1.5mm | Industrial optics supplier | — | < 2% loss at sensor wavelengths |
 | Optical Adhesive | NOA61 UV adhesive | Norland | — | Window to sensor bonding |
+
+### Passive Regulation Signals
+
+The PPG subsystem is a continuous relationship sensor, not just an unlock mechanism. It should sample opportunistically on pickup and during natural palm contact, then feed local trend models for heart rate, HRV, recovery state, stress-load trend, sympathetic arousal, cold-hand/circulation state, respiratory rhythm trend, and baseline drift. This is product guidance data, not diagnostic data.
+
+Regulatory constraint: do not claim medical diagnosis, disease detection, treatment, or clinical accuracy unless Ezra enters a formal regulated medical pathway. Default positioning is pattern intelligence and personal regulation.
 
 ### Haptic
 
@@ -53,7 +59,8 @@
 
 | Component | Part | Manufacturer | Notes |
 |-----------|------|--------------|-------|
-| Peltier Element | TEC1-12706 | Generic | 40×40mm, 6A max, 51W |
+| Thermoelectric element | Thin thermal module / resistive warming plate | TBD | Production target for 21mm crowned body with 8mm edge thickness |
+| Demo Peltier Element | TEC1-12706 | Generic | 40×40mm, 6A max, 51W; benchtop/investor demo only |
 | MOSFET Driver | IRL3803 | Vishay | PWM control via CM4 GPIO |
 | Heat Spreader | 1mm copper sheet, 50×40mm | McMaster-Carr | Hot side to chassis mass |
 | Thermal Interface | Fujipoly XR-m (3 W/mK) | Fujipoly | Element to spreader |
@@ -71,8 +78,10 @@
 
 | Component | Part | Manufacturer | Notes |
 |-----------|------|--------------|-------|
-| Battery | LP-104065 LiPo, 3,500mAh | Generic | 3.7V nominal |
+| Battery | Custom Li-ion pouch, target 5,500–6,500mAh equivalent geometry | TBD | Largest central internal component; conformal or stacked pouch layout under crowned shell |
 | Charging IC | BQ25895 | Texas Instruments | USB-C PD, 18W input |
+| Wireless charging receiver | Qi2/MagSafe-compatible receiver module | TBD | Hidden centered rear coil; validate certification path with WPC |
+| Magnetic alignment ring | N52 magnet ring array | TBD | Hidden under rear shell, sized for common phone magnetic charger puck alignment |
 | USB-C Connector | HRO TYPE-C-31-M-17 | HRO | IP54 rated |
 | Fuel Gauge | MAX17048 | Maxim | 1% accuracy SoC estimation |
 | DC-DC (5V rail) | TPS62133 | Texas Instruments | CM4 power supply |
@@ -94,14 +103,14 @@
 | COB LED (max) | 1,000 | 0 |
 | Misc (MCUs, sensors) | 30 | 8 |
 
-**Typical use (voice + calls, no Peltier/LED):** ~1,800mA average → 3,500mAh / 1,800mA ≈ ~19 hours  
-**Standby (LTE connected, PPG monitoring):** ~110mA → 3,500mAh / 110mA ≈ ~32 hours
+**Typical use (voice + calls, no warmth/LED):** ~1,800mA average → 6,000mAh / 1,800mA ≈ ~3.3 hours of active-heavy use  
+**Standby (LTE connected, PPG monitoring):** ~110mA → 6,000mAh / 110mA ≈ ~54 hours
 
 ---
 
 ## Thermal Constraints
 
-The Peltier element draws up to 22W (6A × 3.7V) at full duty cycle, which would drain the battery in under 10 minutes at maximum. The intended usage is burst thermal notifications (3–10 seconds at 50% PWM ≈ 11W). The chassis mass acts as a thermal reservoir.
+The benchtop TEC1-12706 draws up to 22W (6A × 3.7V) at full duty cycle and is too bulky for the phone-scale enclosure. Production hardware needs a thin thermal module or resistive warming plate sized for burst warmth notifications (3–10 seconds), coupled to the palm-side shell through a graphite spreader. The chassis and mineral shell act as thermal reservoirs.
 
 **Design constraint:** Limit Peltier duty cycle to 30-second maximum per activation. Software-enforced cooldown of 60 seconds between activations to prevent thermal accumulation.
 
@@ -125,10 +134,27 @@ Boards connect via FFC (flat flexible cable) with ZIF connectors. This allows se
 |---------|----------|-----------|
 | Speaker aperture | Upper face center | ±0.3mm |
 | Sensor window | Lower face center | ±0.1mm (optical alignment critical) |
+| Qi receiver coil | Rear center, hidden behind shell | ±0.5mm |
+| Magnetic alignment ring | Rear center around coil, hidden behind shell | ±0.5mm |
 | USB-C port | Lower edge | ±0.2mm |
-| Ambient LED ring | Perimeter groove | ±0.5mm |
+| Internal glow / ambient light pipe | Perimeter groove or thinned mineral window | ±0.5mm |
 | Peltier contact zone | Lower rear face | ±1mm |
 | Battery access (service) | None (sealed) | — |
+
+## Mechanical Envelope
+
+| Parameter | Target |
+|-----------|--------|
+| Length | 108mm |
+| Tail width | 66mm |
+| Head width | 63mm |
+| Center thickness | 21mm |
+| Edge thickness | 8mm |
+| Top shell wall | 3.2mm |
+| Bottom shell wall | 2.8mm |
+| Mass target | 210g |
+
+The exterior must carry subtle tactile asymmetry: narrower head for flashlight/directional speaker/mic orientation, fuller tail for battery and biometric mass, a shallower thumb-side sweep, rounder finger-side squeeze contour, rearward crown offset of roughly 5mm, and a biased underside contact patch. The asymmetry should be felt more than seen.
 
 ---
 

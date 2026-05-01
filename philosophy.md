@@ -36,9 +36,13 @@ Without a screen, the interface language must change. Ezra communicates through 
 
 **Light.** Light communicates without demanding. A soft amber pulse on the desk is visible peripherally without requiring the user to stop what they are doing. The color and rhythm encode meaning. The user does not have to pick up the device to know what kind of attention is being requested.
 
+**Physiology.** The PPG window is not only a lock. It turns ordinary pickup into a tiny relationship check: heart rate, HRV, recovery state, stress-load trends, circulation quality, and baseline drift can be understood over time without asking the user to open an app or maintain another ritual. Ezra should not diagnose. It should notice patterns and help the user regulate: breathe before a meeting, walk after a sedentary morning, wind down after repeated poor sleep, or soften after conflict.
+
+A phone can measure things. Ezra can shepherd behavior. That is the category difference.
+
 ## The Stone
 
-KRION was chosen because it is honest material. It does not pretend to be something it is not. It is heavy, cool-to-touch, durable, and undecorated. It does not reflect the user's face back at them. It does not glow from within. It sits on a desk and it looks like a thing that has been made well and will last.
+KRION was chosen because it is honest material. It does not pretend to be something it is not. It is heavy, cool-to-touch, durable, and undecorated. It does not reflect the user's face back at them. If it glows, it glows like warm stone around a hidden ember, not like a screen asking to be watched. It sits on a desk and it looks like a thing that has been made well and will last.
 
 The form factor communicates before the user touches it: this device is for holding, not watching.
 
