@@ -8,10 +8,17 @@ Ezra is a pocketable AI-native communication and identity device that removes th
 
 The current design direction is a warm translucent KRION/Corian mineral skip-stone form: calm from the outside, technically dense inside, and built around a clear sensor and packaging plan.
 
+## Brought To You By The Studio
+
+![The Studio by Good Industries](studio.png)
+
+Project Ezra comes from The Studio by Good Industries: the hardware, AI, and product workshop inside The Good Project. The Studio is where the concept, industrial design, Blender exploration, Onshape packaging, prototype BOM, and investor demo plan are being pulled into one buildable product direction.
+
 ## Current Design Progress
 
 | Area | Current state | Source |
 |---|---|---|
+| Origin | Brought to you by The Studio, a Good Industries project inside The Good Project | [`studio.png`](studio.png) |
 | Hero render | Warm crystalline mineral body with amber internal and perimeter glow | [`Project Ezra.png`](Project%20Ezra.png) |
 | Phone plan | Top face, underside, internal stack, sensor map, and BOM callouts | [`project-ezra-phone-plan.svg`](project-ezra-phone-plan.svg) |
 | Blender form model | Parametric skip-stone body, material system, glow target, optional feature/package guides | [`ezra_golden_phone/`](ezra_golden_phone/) |
@@ -232,6 +239,7 @@ Product scene assemblies already captured for review:
 ├── haptic-language.md
 ├── ppg-authentication.md
 ├── prototype-guide.md
+├── studio.png
 ├── system-architecture.svg
 ├── ezra_golden_phone/
 │   ├── BRIEF.md
@@ -263,5 +271,5 @@ Product scene assemblies already captured for review:
 | Voice stack | Scoped |
 | Manufacturing partner selection | Pending |
 
-Good Industries - A division of The Good Project  
+Project Ezra is brought to you by The Studio, a project from Good Industries inside The Good Project.
 [thegoodproject.net](https://thegoodproject.net)
