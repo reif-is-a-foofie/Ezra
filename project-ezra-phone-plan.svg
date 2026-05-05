@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Project Ezra phone plan</title>
+  <desc id="desc">Plan-view engineering diagram showing Project Ezra top face, underside, internal stack, sensor locations, and bill of materials callouts.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f5f2ea; }
+      .ink { fill: #202020; }
+      .muted { fill: #63615b; }
+      .hair { stroke: #beb8aa; stroke-width: 2; fill: none; }
+      .body { fill: #fbf8ec; stroke: #2f2d29; stroke-width: 3; }
+      .body2 { fill: #fffaf0; stroke: #2f2d29; stroke-width: 3; }
+      .glow { stroke: #d99832; stroke-width: 8; fill: none; opacity: 0.72; }
+      .amber { fill: #d99832; }
+      .copper { fill: #bc6f39; }
+      .board { fill: #668477; }
+      .battery { fill: #4e5666; }
+      .sensor { fill: #395e8f; }
+      .thermal { fill: #a94848; }
+      .light { fill: #f1c14d; }
+      .label { font: 24px Arial, Helvetica, sans-serif; fill: #202020; }
+      .small { font: 18px Arial, Helvetica, sans-serif; fill: #3c3a35; }
+      .tiny { font: 15px Arial, Helvetica, sans-serif; fill: #5f5b53; }
+      .head { font: 36px Arial, Helvetica, sans-serif; font-weight: 700; fill: #202020; letter-spacing: 0; }
+      .subhead { font: 22px Arial, Helvetica, sans-serif; font-weight: 700; fill: #202020; letter-spacing: 0; }
+      .leader { stroke: #403d36; stroke-width: 2.2; fill: none; }
+      .dash { stroke: #8d887d; stroke-width: 2; stroke-dasharray: 7 8; fill: none; }
+      .chipText { font: 14px Arial, Helvetica, sans-serif; fill: #ffffff; font-weight: 700; letter-spacing: 0; }
+      .box { fill: #ebe5d7; stroke: #cdc4b3; stroke-width: 1.5; }
+    </style>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#000000" flood-opacity="0.16"/>
+    </filter>
+    <radialGradient id="stone" cx="48%" cy="44%" r="70%">
+      <stop offset="0%" stop-color="#fffdf2"/>
+      <stop offset="58%" stop-color="#efe5d2"/>
+      <stop offset="100%" stop-color="#d8ceb9"/>
+    </radialGradient>
+  </defs>
+
+  <rect class="bg" width="1600" height="1000"/>
+
+  <text x="70" y="78" class="head">Project Ezra - Current Phone Plan</text>
+  <text x="72" y="112" class="small">Screenless skip-stone companion device: mineral body, voice interface, biometric pickup, haptic/thermal/light language.</text>
+
+  <g transform="translate(60 152)">
+    <text x="0" y="0" class="subhead">Top face / hand side</text>
+    <text x="0" y="28" class="tiny">Pure mineral surface, no screen, camera, visible logo, buttons, or app surface.</text>
+    <g transform="translate(290 245)" filter="url(#shadow)">
+      <path class="body" fill="url(#stone)" d="M -250 0 C -243 -116 -140 -178 15 -172 C 184 -165 273 -93 250 20 C 226 136 92 190 -54 165 C -197 141 -257 79 -250 0 Z"/>
+      <path class="glow" d="M -238 3 C -231 -104 -136 -160 13 -154 C 170 -148 251 -83 232 18 C 213 122 87 170 -50 148 C -181 126 -245 73 -238 3 Z"/>
+      <circle class="sensor" cx="-70" cy="80" r="22"/>
+      <circle fill="#d6eef7" stroke="#2f2d29" stroke-width="2" cx="-70" cy="80" r="14"/>
+      <circle class="amber" cx="-172" cy="-74" r="8"/>
+      <circle class="amber" cx="0" cy="-113" r="8"/>
+      <circle class="amber" cx="152" cy="-68" r="8"/>
+      <circle class="amber" cx="190" cy="58" r="8"/>
+      <rect class="hair" x="90" y="-138" width="112" height="20" rx="10"/>
+      <path class="dash" d="M -98 -114 C -58 -150 32 -150 76 -104"/>
+      <text class="tiny" x="-24" y="-134" text-anchor="middle">4 mic grid</text>
+    </g>
+    <line class="leader" x1="220" y1="324" x2="20" y2="356"/>
+    <text x="0" y="384" class="small">12 mm sapphire PPG eye</text>
+    <text x="0" y="410" class="tiny">MAX30102 / MAX30101 for owner auth and pickup regulation signals.</text>
+    <line class="leader" x1="380" y1="134" x2="80" y2="92"/>
+    <text x="0" y="82" class="small">Beamforming voice pickup</text>
+    <text x="0" y="108" class="tiny">Four MEMS microphones spaced around the perimeter.</text>
+    <line class="leader" x1="520" y1="106" x2="618" y2="72"/>
+    <text x="628" y="64" class="small">Speaker / acoustic slot</text>
+    <text x="628" y="90" class="tiny">Upper head edge, tuned for speech clarity.</text>
+    <line class="leader" x1="508" y1="280" x2="676" y2="312"/>
+    <text x="688" y="307" class="small">Diffuse perimeter glow</text>
+    <text x="688" y="333" class="tiny">RGBW/amber status signal; not a display.</text>
+  </g>
+
+  <g transform="translate(60 610)">
+    <text x="0" y="0" class="subhead">Underside / table side</text>
+    <text x="0" y="28" class="tiny">Functional light platform, charging package, feet, USB-C, warmth zone, and hidden antenna paths.</text>
+    <g transform="translate(285 215)" filter="url(#shadow)">
+      <path class="body2" d="M -250 0 C -243 -116 -140 -178 15 -172 C 184 -165 273 -93 250 20 C 226 136 92 190 -54 165 C -197 141 -257 79 -250 0 Z"/>
+      <rect class="light" x="-166" y="72" width="102" height="18" rx="9"/>
+      <rect class="light" x="-48" y="72" width="102" height="18" rx="9"/>
+      <rect class="light" x="70" y="72" width="102" height="18" rx="9"/>
+      <circle class="thermal" cx="-62" cy="-32" r="42"/>
+      <rect class="copper" x="-96" y="-66" width="68" height="68" rx="8"/>
+      <circle class="hair" cx="62" cy="-20" r="62"/>
+      <circle class="hair" cx="62" cy="-20" r="82"/>
+      <rect class="hair" x="153" y="18" width="58" height="20" rx="8"/>
+      <circle class="ink" cx="152" cy="-102" r="10"/>
+      <circle class="ink" cx="-90" cy="-100" r="10"/>
+      <circle class="ink" cx="-84" cy="122" r="10"/>
+      <rect class="sensor" x="-182" y="22" width="28" height="18" rx="6"/>
+      <rect class="sensor" x="-144" y="22" width="28" height="18" rx="6"/>
+    </g>
+    <line class="leader" x1="130" y1="287" x2="2" y2="330"/>
+    <text x="0" y="360" class="small">Bottom light array</text>
+    <text x="0" y="386" class="tiny">Wide flood / focused flashlight / wide flood; UV-A emitters near trailing underside.</text>
+    <line class="leader" x1="226" y1="184" x2="0" y2="138"/>
+    <text x="0" y="128" class="small">Thermal presence zone</text>
+    <text x="0" y="154" class="tiny">Thin TEC or warming plate coupled through graphite and copper spreaders.</text>
+    <line class="leader" x1="350" y1="188" x2="650" y2="132"/>
+    <text x="660" y="126" class="small">Qi2/MagSafe package</text>
+    <text x="660" y="152" class="tiny">Hidden coil and magnet alignment ring. Not exterior design language.</text>
+    <line class="leader" x1="488" y1="232" x2="700" y2="236"/>
+    <text x="710" y="232" class="small">USB-C service/charge edge</text>
+    <text x="710" y="258" class="tiny">Gasketed connector target for prototype bring-up.</text>
+    <line class="leader" x1="438" y1="102" x2="700" y2="62"/>
+    <text x="710" y="58" class="small">Golden gnomon feet</text>
+    <text x="710" y="84" class="tiny">Three silicone-capped feet stabilize light mode and table clearance.</text>
+  </g>
+
+  <g transform="translate(1050 155)">
+    <text x="0" y="0" class="subhead">Internal stack / BOM anchors</text>
+    <text x="0" y="28" class="tiny">Prototype volumes from Blender manifest and Onshape packaging notes.</text>
+
+    <rect class="box" x="0" y="55" width="460" height="445" rx="8"/>
+    <g transform="translate(38 88)">
+      <rect class="battery" x="96" y="70" width="200" height="92" rx="12"/>
+      <text class="chipText" x="196" y="122" text-anchor="middle">Battery 4000-6500 mAh</text>
+      <rect class="board" x="80" y="190" width="230" height="84" rx="8"/>
+      <text class="chipText" x="195" y="238" text-anchor="middle">CM4 + carrier / PMIC</text>
+      <rect class="board" x="40" y="292" width="120" height="48" rx="8"/>
+      <text class="chipText" x="100" y="322" text-anchor="middle">LTE modem</text>
+      <rect class="sensor" x="186" y="292" width="135" height="48" rx="8"/>
+      <text class="chipText" x="254" y="322" text-anchor="middle">PPG + sensors</text>
+      <rect class="thermal" x="42" y="25" width="95" height="48" rx="8"/>
+      <text class="chipText" x="90" y="55" text-anchor="middle">Thermal</text>
+      <rect class="light" x="260" y="25" width="108" height="48" rx="8"/>
+      <text class="chipText" x="314" y="55" text-anchor="middle">Light/UV</text>
+      <path class="dash" d="M 24 13 H 388 V 356 H 24 Z"/>
+      <text class="tiny" x="27" y="386">Shell envelope: 116 x 64 x 15 mm, 5.5 mm visual edge.</text>
+    </g>
+
+    <text x="0" y="548" class="subhead">Sensor + subsystem map</text>
+    <text x="0" y="586" class="small">Identity: MAX30102 PPG behind sapphire window + TPM.</text>
+    <text x="0" y="618" class="small">Voice: 4x MEMS mic array, DSP, MAX98357A, 2 W speaker.</text>
+    <text x="0" y="650" class="small">Haptic: LRA actuators with DRV2605L waveform drivers.</text>
+    <text x="0" y="682" class="small">Thermal: thin TEC/warming plate, graphite/copper spreader.</text>
+    <text x="0" y="714" class="small">Light: bottom flood/throw/flood LEDs plus UV-A inspection emitters.</text>
+    <text x="0" y="746" class="small">Connectivity: LTE, WiFi/BT, perimeter antenna keepouts.</text>
+    <text x="0" y="778" class="small">Power: USB-C PD, Qi2 magnetic receiver, Li-ion pouch.</text>
+  </g>
+</svg>
